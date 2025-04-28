@@ -32,7 +32,7 @@ const Login = ({ setToken }) => {
     <div className="flex items-center justify-center w-full min-h-screen">
       <div className="max-w-md px-8 py-6 bg-white rounded-lg shadow-md">
         <div className="mb-3 w-fit">
-          <img src={assets.logo} alt="Trendify" />
+          <img src={assets.logo} alt="Trendy" />
         </div>
         <h1 className="mb-4 text-2xl font-bold">Admin Dashboard</h1>
         <form onSubmit={onSubmitHandler}>

@@ -99,8 +99,8 @@ const Product = () => {
           <p className='px-5 py-3 text-sm border'>Reviews (122)</p>
         </div>
         <div className='flex flex-col gap-4 px-6 py-6 text-sm text-gray-500 border'>
-          <p>Elevate your style with our meticulously crafted Trendify quality products. Designed with a perfect balance of elegance and practicality, these Trendify quality products made from premium materials that ensure both durability and comfort.</p>
-          <p>Whether you're dressing up for a special occasion or adding a touch of sophistication to your everyday look, the Trendify quality products offer unparalleled versatility. Its timeless design, coupled with a flawless fit, makes it a must-have addition to any wardrobe. Don’t miss out on the chance to own a piece that combines both form and function—experience the difference today.</p>
+          <p>Elevate your style with our meticulously crafted Trendy quality products. Designed with a perfect balance of elegance and practicality, these Trendy quality products made from premium materials that ensure both durability and comfort.</p>
+          <p>Whether you're dressing up for a special occasion or adding a touch of sophistication to your everyday look, the Trendy quality products offer unparalleled versatility. Its timeless design, coupled with a flawless fit, makes it a must-have addition to any wardrobe. Don’t miss out on the chance to own a piece that combines both form and function—experience the difference today.</p>
         </div>
       </div>
       {/* Display Related Products */}

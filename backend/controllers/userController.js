@@ -8,25 +8,43 @@ import userModel from "../models/userModel.js";
 // This function will be used directly in the routes that need protection
 export const authMiddleware = async (req, res, next) => {
   const { token } = req.headers;
-
+  console.log("[authMiddleware] Token from headers:", token);
   if (!token) {
+    console.log("[authMiddleware] FAILED: No token provided.");
     return res
       .status(401)
       .json({ success: false, message: "Not authorized. Login Again." });
   }
 
   try {
+    console.log("[authMiddleware] Verifying token...");
     const token_decode = jwt.verify(token, process.env.JWT_SECRET);
+
+    console.log(
+      "[authMiddleware] Token verified. Decoded ID:",
+      token_decode.id
+    );
+
     // Attach userId to the request object (not body, to avoid potential conflicts)
     req.userId = token_decode.id;
+    console.log("[authMiddleware] userId attached to request:", req.userId);
+
     next();
+
+    console.log("[authMiddleware] next() called.");
   } catch (error) {
-    console.log("Auth Middleware Error:", error);
+    console.error("[authMiddleware] CATCH block triggered:", error);
     if (error.name === "TokenExpiredError") {
       return res
         .status(401)
         .json({ success: false, message: "Token expired. Login Again." });
     }
+
+    console.error(
+      "[authMiddleware] Specific JWT verification error:",
+      error.message
+    );
+
     return res
       .status(401)
       .json({ success: false, message: "Authorization Error" });
